@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 
 // <summary>
 // A static class with a bunch of helpers
@@ -19,9 +18,9 @@ public static class Helper
                 if (key != null)
                 {
                     return key.GetValue("RemotePath").ToString() + path.Remove(0, 2).ToString();
-                }
-            }
-        }
+                } // if
+            } // using
+        } // if
         return path;
     }
 }

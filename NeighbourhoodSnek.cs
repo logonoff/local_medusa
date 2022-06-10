@@ -18,9 +18,18 @@ public sealed class NeighbourhoodSnek : Snek
     [cmd]
     public async Task NetworkPlay(GuildContext ctx, [leftover] string msg)
     {
-        string message = Helper.UNCPath(msg);
+        string path = msg;
 
-        await _cmdHandler.ExecuteExternal(ctx.Guild.Id, ctx.Channel.Id, ".localplaylist " + message);
+        // prepend a backslash if input is a UNC path that only starts with one
+        if (msg.StartsWith(@"\") && !msg.StartsWith(@"\\")) {
+            path = Helper.UNCPath("\\" + msg);
+        } // if
+        else {
+            path = Helper.UNCPath(msg);
+        } // else
+
+        // execute command with full permissions
+        await _cmdHandler.ExecuteExternal(ctx.Guild.Id, ctx.Channel.Id, ".localplaylist " + path);
     }
 
     /// <summary>
