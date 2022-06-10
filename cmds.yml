@@ -1,0 +1,4 @@
+networkplay: 
+  desc: "Replaces network mounted path with its exact address"
+  args:
+    - "<remote file path>"
