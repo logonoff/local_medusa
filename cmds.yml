@@ -1,4 +1,9 @@
 networkplay: 
-  desc: "Replaces network mounted path with its exact address"
+  desc: "Replaces network mounted path with its exact address. `.npl` is an alias"
   args:
     - "<remote file path>"
+
+playwpl: 
+  desc: "Queues WPL file with converted direct UNC path. `.wpl` is an alias"
+  args:
+    - "<remote file path>.wpl"
