@@ -1,1 +1,2 @@
 medusa.description: "Medusa for playing music from a remote network"
+track_not_found: "Track {0} not found"
